@@ -52,3 +52,12 @@ git config --global user.email "alan.arts@gmail.com"
 -------------------------------------------
 Inicializando o GIT na pasta do projeto e fazendo o PUSH para o repositório
 -------------------------------------------
+COMANDOS:
+git init
+git add .  (para adicionar os arquivos)
+git commit -m "first commit" (nesse exemplo usei como nome do comit a palavra build)
+git branch -M "main"
+git remote add origin https://github.com/alan-deluca/projeto-angular1.git
+git push -u origin "main"
+
+------------------------------------------------------------------------------
