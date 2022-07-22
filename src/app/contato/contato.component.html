@@ -1,0 +1,46 @@
+<h2 class="contact__title">Contato</h2>
+<section class="contact__container">
+
+    <form class="contact-form" [formGroup]="formContato" (ngSubmit)="enviarFormulario()">
+        <input type="text" placeholder="Nome" formControlName="nome" [class.valid]="formContato.controls['nome'].valid"
+            [class.invalid]="formContato.controls['nome'].invalid && 
+                ( formContato.controls['nome'].touched || formContato.controls['nome'].dirty )" />
+
+        <!-- Div que vai aparecer quando houver algum erro de validação no campo -->
+        <div *ngIf="formContato.controls['nome'].invalid && 
+        ( formContato.controls['nome'].touched || formContato.controls['nome'].dirty)">
+
+            <small class="error-message" *ngIf="formContato.controls['nome'].hasError('minlength')">
+                Esse campo precisa de no mínimo 4 caracteres
+            </small>
+            <small class="error-message" *ngIf="formContato.controls['nome'].hasError('required')">
+                Esse campo é obrigatório
+            </small>
+
+        </div>
+
+        <input type="text" placeholder="Assunto"/>
+
+        <!-- Para colocar uma máscara no campo telefone foi utilizada a biblioteca
+             NGX-Mask
+            comando para instalar: npm install --save ngx-mask NA PASTA DO PROJETO!-->
+        <input type="text" placeholder="telefone" mask="(00) 0 0000-0000"/>
+
+
+        <input type="email" placeholder="e-mail@host.com" />
+        <textarea maxlength="300" placeholder="mensagem"></textarea>
+
+        <!-- Desabilitar o botão enquanto o formulário não estiver válido -->
+        <button [disabled]="formContato.invalid" type="submit">Enviar</button>
+
+    </form>
+
+    <address>
+
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14230.300361031368!2d-49.0703074!3d-26.9169772!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa5ec9dd8406a6a7!2sProWay!5e0!3m2!1spt-BR!2sbr!4v1658402878537!5m2!1spt-BR!2sbr"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <p>R. 7 de Setembro, 1600 - 14º andar - Centro, Blumenau - SC, 89010-204</p>
+    </address>
+</section>

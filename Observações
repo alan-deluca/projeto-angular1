@@ -1,0 +1,54 @@
+Projeto para exemplicar o que foi aprendido no curdo de Angular. 
+
+A primeira etapa é criar o projeto com o comando ng new nome_projeto
+
+Depois criamos os componentes header e footer (comando ng g component header)
+
+Em seguida criamos um módulo chamado produtos. Foi criado esse módulo para que tudo relacionado
+aos produtos fiquem nele e seja possível trabalhar com o "lazy loading", fazendo a página 
+carregar mais rápido. 
+No comando para criar esse módulo foi passado o paramtro --route para já criar uma rota para esse módulo e também o parametro --module atrelando ele ao modulo da aplicação
+
+Comando: ng g module produtos --route produtos --module app.module
+
+Depois criamos um componente para exibir os detalhes de um produto. NOTE que esse
+componente foi criado dentro do módulo "Produtos". Um módulo pode possuir N componentes
+
+COMANDO: ng g component produtos/detalhe-produto --module produtos.module 
+
+Também usamos nesse projeto um compoenente pronto do Angular Material para exibir mensagens.
+O componente se chama Snackbar. 
+
+Para usar esses componentes prontos primeiro é necessário instalar a biblioteca "Angular Material". COMANDO: "ng add @angular/material" na pasta raíz do projeto. IMPORTANTE reiniciar o servidor para detectar a instação da biblioteca. 
+
+Após instalado a biblioteca importamos o componente no arquivo app.modules.ts. Nesse caso importamos o componente MatSnackBarModule.
+
+Em seguida criamos um seriço para cuidar das notificações. COMANDO: ng g service notificacao.
+
+Também criamos um serviço para armazenar os produtos no carrinho e assim consguir utiliá-lo em diversas partes da aplicação.
+
+Posteriormente criamos um módulo que será a página do carrinho. 
+ng generate module carrinho --route carrinho --module app.module
+
+também foi gerado um módulo para a página de contato.
+
+Para reagir ao formulário da página de contatos e validar os campos foi necessário importar no contato.modules.ts o modulo ReactiveFormsModule
+
+--------------------------------
+FAZENDO O BUILD DA APLICAÇÃO:
+--------------------------------
+Por fim, quando o projeto está pronto é necessário fazer o build. Essa tarefa transforma o typescript em javascript e faz outras tarefas para podermos publicar o site no servidor
+
+COMANDO: ng build --base-href="https://alan-deluca.github.io/projeto-angular1/"
+
+-------------------
+USANDO O GIT
+------------------
+Após o Build instalei o Git e fiz as seguintes configurações iniciais:
+
+git config --global user.name "ADeluca"
+git config --global user.email "alan.arts@gmail.com"
+
+-------------------------------------------
+Inicializando o GIT na pasta do projeto e fazendo o PUSH para o repositório
+-------------------------------------------
