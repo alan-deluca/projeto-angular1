@@ -41,6 +41,10 @@ Por fim, quando o projeto está pronto é necessário fazer o build. Essa tarefa
 
 COMANDO: ng build --base-href="https://alan-deluca.github.io/projeto-angular1/"
 
+IMPORTANTE!!: alterar no arquivo angular.json a propriedade outputPath para "docs". Exemplo: "outputPath": "docs",
+
+Isso fará o build ficar nessa pasta docs
+
 -------------------
 USANDO O GIT
 ------------------
